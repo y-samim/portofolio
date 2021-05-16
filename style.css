@@ -1,3 +1,668 @@
-body{
-    background-color: aquamarine;
+
+html{
+    background-color: rgb(233, 233, 233);
+    box-sizing: border-box;
+     /* set to the  root size to 10 px */
+      font-size: 0.625em;
+      height: 100%; /*responsive*/
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+  }
+
+
+  *,*::before,*::after{
+      box-sizing: inherit;
+  }
+  
+
+
+  *{
+   box-sizing: inherit;
+    font-size: 2rem;
+    margin:0;
+    padding: 0;
+    text-align: center;
+   
+  }
+
+  body{
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%; /*responisive*/
+      overflow-x: hidden;
+   
+
+  }
+  
+ 
+
+#pagetop{
+    min-height: 100vh;
+    width: 100%;
+    background-image:linear-gradient(rgba(228, 228, 228, 0.7),rgba(61, 70, 53, 0.7)),url(/images/sarah-dorweiler-2s9aHF4eCjI-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+
+
+nav.sticky{
+    padding:5px 20px;
+    background-color:#869286;
+    z-index:99999;
+
+}
+
+
+nav{
+    display: flex;
+    padding: 2% 3%;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 4px;
+    /*------------------*/
+    position: fixed;/* =>sticky nav*/
+    width: 100%;
+    height: 80px;
+    top: 0;
+    right: 0; /* to display nav in mobile browser in the right side*/
+    transition: all 2.3s ease; /*sticky nav: transition*/
+    /*---------*/
+       
+}
+
+
+
+ 
+
+ .logo a{
+   
+     width: 150px;
+     text-decoration: none;
+     color: rgb(12, 27, 12);
+     font-size: 20px;
+     font-weight: 600;
+     /*font-family: 'Pacifico', cursive;*/
+     font-family: 'Lobster Two', cursive;
+     letter-spacing: 5px;
+     transition-property: font-size;
+     transition-duration: 3s;
+     transition-delay: 1s;
+}
+
+
+
+.logo a:hover{
+    font-size: 3rem;
+    }
+
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    
+    
+}
+
+nav ul li a{
+    color:rgb(7, 27, 6);
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Lobster Two', cursive;
+    transition-property: font-size;
+    transition-duration: 3s;
+    transition-delay: 1s;
+    /*--------*/
+    
+}
+
+nav ul li a:hover{
+    font-size: 3rem;
+    }
+
+
+
+/*hovor effect on the menu*/
+nav ul li::after{
+    content:'';
+    width: 0%; /*it will be hidden the line under the menu text*/
+    height: 2px;
+    background: rgb(31, 46, 32);
+    display: block;
+    margin:auto;
+    transition: 0.5s;
+
+}
+
+
+
+nav ul li:hover::after{
+    width: 100%; /* the same width as above, which is hidden*/
+
+
+}
+
+
+
+.intro-box{
+    width: 90%;
+    color: rgb(7, 27, 10);
+    position:absolute; /* to display top */
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%); /* sets in the center of the container,but absolate */
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+}
+
+
+
+.intro-box h1{
+    font-size: 50px;
+    font-family: 'Lobster Two', cursive;
+    
+}
+
+
+.intro-box p{
+    margin: 10px 0 40px; /*top:10px left & right:0px  bottom:40px*/
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: rgb(92, 88, 81);
+}
+
+
+
+
+.button-top{
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(7, 19, 10);
+    border: 1px solid rgb(14, 31, 19);
+    padding: 12px 30px;
+    font-size: 16px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+
+
+}
+
+
+
+.button-top:hover{
+    border:1px solid rgb(114, 114, 109);
+    background: rgb(43, 51, 44);
+    color: rgb(161, 161, 161);
+    transition: 1s;
+}
+
+
+#pagetop .fa{
+    display: none;
+}
+nav .fa{
+    display: none;
+}
+
+
+/*------------------responsive navside----------------*/
+
+
+@media(max-width: 700px){
+    
+    .navStyle{
+        z-index: 2;
+        position: absolute;
+        height:100vh;
+        width: 200px;
+        top:0;
+       
+        text-align: left;
+        padding-bottom: 40px;
+        display: block;
+        margin: 0 auto;
+        right:  -200px; /*to hide the close and menu bar in small screen*/;
+        
+        
+    }
+    
+    
+    
+    #pagetop{
+        display: block;
+        width: 100%;
+    }
+    
+    nav ul li{
+        display: block;
+        align-items: center;
+        z-index: 2;
+       
+        
+    
+    
+    }
+    
+    .intro-box h1{
+        font-size: 25px;
+    }
+    
+    nav ul{
+        margin: 0px;
+        padding: 0px; 
+        position: absolute;
+        background: #869286;
+        height: 100%;
+        width:100%; 
+        top:0%;
+        right:0;  
+       /* z-index: 2; /*this will add the nav-side on top of other layout while in small screen*/
+      
+     }
+    
+    
+     nav ul{
+         padding: 50px;
+     
+     }
+    
+     
+    #pagetop .fa{
+        
+        display: block;
+        color: rgb(19, 29, 21);
+        margin:20px;
+        font-size: 22px;
+        cursor: pointer;
+        position: absolute;
+    
+    }  /*--section: main responisive--*/
+    main{
+        width: 95%;
+        margin: 0 auto;
+      }
+      #contact{
+        width: 95%;
+        margin: 10px auto;
+      }
+
+      #reusme{
+        background-attachment: fixed;
+      }
+
+    }
+
+/*------------------main------------------*/
+
+
+
+main{
+    display: block;
+    /*padding:5rem; */
+    text-align: center;
+
+    /* -for more than 1 column->>>>>>
+    >>>>>
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    /*padding:5rem;<<<<<<<*/
+    
+    
+}
+
+
+#about{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    text-align: center;
+    padding-bottom: 100px;
+   
+}
+
+#about h2{
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+    color: rgb(29, 34, 17);
+    font-weight: 40;
+    padding: 30px;
+    transition: 00.5s;
+}
+
+#about h2:hover{
+    box-shadow: 0 0 20px 0px rgba(156, 121, 121, 0.2);
+}
+
+
+#img1{
+    width: 170px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 50%;
+    object-position: 50%;
+    border: 0.5%;
+    transition: width 2s, height 3s;
+   
+  }
+
+  
+ 
+ /*
+  #img1{
+    border-radius:80%;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    transition: width 2s, height 4s;
+
+  }
+
+  */
+
+
+  #img1:hover{
+    width: 300px;
+    height: auto;
+    box-shadow: 0 0 20px 0px rgba(156, 121, 121, 0.2);
+  }
+
+  #about blockquote{
+      padding: 10px;
+      font-size: 16px;
+  }
+
+  #about p{
+      padding: 10px;
+      line-height: 1.5;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 200;
+      color: rgb(25, 31, 13);
+      
+  }
+
+  /*--------------id: passion----------*/
+
+  #passion{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+ 
+
+  #passion h2{
+    font-size: 25px;
+    font-family: "Lato", sans-serif;
+    font-weight: 20;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+  #passion p{
+    padding: 10px;
+    line-height: 1.5;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+  }
+
+
+  /*-----------------id: experience---------*/
+
+  #experience{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+#experience h2{
+    font-size: 25px;
+    font-family: "Lato", sans-serif;
+    font-weight: 20;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+
+#experience p{
+    padding: 10px;
+    line-height: 1.5;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+}
+  
+
+/*----------section: projects-------*/
+#project{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+#project h2{
+    font-size: 25px;
+    font-family: "Lato", sans-serif;
+    font-weight: 20;
+    padding: 20px;
+    text-transform: uppercase;
+
+}
+
+
+#project p{
+    padding: 10px;
+    line-height: 1.5;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+}
+
+
+
+/*-----------id: resume-----------*/
+
+#resume{
+    background-image:linear-gradient(rgba(75, 77, 75, 0.7),rgba(41, 61, 44, 0.7)), url(/images/unsplash2.jpg);
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: rgb(245, 239, 239);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+
+#resume h2{
+    font-size: 25px;
+    font-family: "Lato", sans-serif;
+    font-weight: 20;
+    padding: 20px;
+    text-transform: uppercase;
+
+}
+
+#resume button{
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(0px);
+    display: inline-block;
+    padding: 15px 30px 15px;
+    color: rgb(226, 226, 226);
+    border: 1px solid rgb(52, 63, 54);
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin: 15px;
+    cursor: pointer;
+    text-align: center;
+    /*---------*/
+}
+ #resume button a{
+   text-decoration: none;
+   color:rgb(245, 239, 239);
+ }
+
+/*---------------------id: contact-----------------------*/
+
+#contact{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /*position:relative; */
+    background-color: rgb(204, 204, 204);
+    background-position: center;
+    background-size: cover;
+    display: block;
+    line-height: 3;
+    align-items: center;
+}
+
+
+#contact i{
+  padding-top: 40px;
+  font-size: 50px;
+  color: rgb(23, 49, 23);
+   
+}
+
+#contact i:hover{
+color:rgb(43, 70, 41);
+}
+
+#contact h2{
+ font-family: 'Lobster Two', cursive; 
+ font-size: 29px;
+
+}
+
+#contact button{
+    text-align: center;  
+    display: inline-block;
+    padding: 15px 30px 10px;
+    border: 1px solid rgb(52, 63, 54);
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color:rgb(186, 189, 186);
+}
+
+
+
+#contact button a{
+  color: rgb(32, 65, 35);
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-family: 'Lato', sans-serif;
+ 
+}
+#contact button:hover{
+  background-color: seashell;
+  color: rgb(81, 99, 87);
+  border-radius: 50px;
+}
+/*--------id: footer------*/
+
+footer{
+    width: 100%;
+    height: auto;
+    margin:auto;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(13, 26, 14);
+    padding-top: 50px;
+    display: block;
+    justify-content: space-evenly;
+   line-height: 4;
+    
+   
+}
+
+footer ul li{
+  display: inline;
+  margin: 0 5px;
+  padding: 0;
+  font-size: 1;
+  line-height: 2;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  list-style: none ;
+}
+
+
+.social-items a{
+    padding: 10px 20px;
+    font-size: 26px;
+    color: seashell;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    background-color: rgb(81, 99, 87);
+    
+}
+
+.social-items a:hover{
+  background-color: seashell;
+  color: rgb(81, 99, 87);
+  border-radius: 50px;
+}
+
+
+footer h3{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: 100;
+    font-size: 15px;
+    /*font-family: "Lato", sans-serif; */
+    font: normal normal normal 14px/1 FontAwesome;
+
+}
+
+
+footer #gotop{
+    padding-top: 2px;
+    padding-bottom: 50px;
+    margin-top: -5px;
+    width: 80px;
+    height: 90px;
+    bottom: 40px;
+    right: 50px;
+    font-size: 40px;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 50px;
+    background-color:rgb(13, 26, 14);
+    color:rgb(81, 99, 87);
+    /*text-shadow: 1px 1px 3px rgba(0,0,0,0.5);*/
+    	
+}
+
+#gotop:hover{
+        background: rgb(13, 26, 14);
+        color:  ivory;
+    }
+
+
+hr{
+  border: 0.10px solid rgb(124, 148, 126);
+  
 }
